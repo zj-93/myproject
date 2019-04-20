@@ -1,16 +1,22 @@
 <template>
   <div class="index">
-    <span>index</span>
-    <topMenu></topMenu>
+    <banner-img />
+    <top-menu />
+    <content-list />
   </div>
 </template>
 
 <script>
+import bannerImg from '@/views/bannerImg/banner.vue'
 import topMenu from '@/views/topNav/topMenu.vue'
+import contentList from '@/views/contentList/contentList.vue'
+
 export default {
 
   components: {
-    topMenu: topMenu
+    topMenu,
+    bannerImg,
+    contentList
   },
   data () {
     return {
