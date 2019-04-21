@@ -1,8 +1,8 @@
 <template>
     <div class="bannerImg">
-        <div class="swiper-container">
+        <div class="swiper-container swiper-container1">
             <div class="swiper-wrapper">
-                <div v-for="(item, index) in imgList" :key="index" class="swiper-slide swiper-no-swiping">
+                <div v-for="(item, index) in imgList" :key="index" class="swiper-slide">
                     <img :src="item.imgDress" alt="">
                 </div>
             </div>
@@ -35,14 +35,13 @@ export default {
       
   },
   mounted() {
-        new Swiper('.swiper-container',{
+        new Swiper('.swiper-container1',{
             autoplay: {
                 delay: 3000,
                 stopOnLastSlide: false,
                 disableOnInteraction: true,
             },
             loop : true,
-            noSwiping : true,
             disableOnInteraction: false,
             pagination: {
                 el: '.swiper-pagination',

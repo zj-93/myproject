@@ -1,24 +1,13 @@
 <template>
   <div class="menu">
       <div class="menuList">
-          <ul>
-              <li>
-                <i class="icon1"></i>
-                <span class="menuName">美食</span>
-              </li>
-              <li>
-                <i class="icon4"></i>
-                <span class="menuName">饮品</span>
-              </li>
-              <li>
-                <i class="icon3"></i>
-                <span class="menuName">水果</span>
-              </li>
-              <li>
-                <i class="icon2"></i>
-                <span class="menuName">旅游</span>
-              </li>
-          </ul>
+        <div class="ul">
+          <span class="li" v-for="(item, index) in menuList" :key="index" @click="menuJump(item.name)">
+            <i :class="item.icon"></i>
+            <span class="menuName">{{item.name}}</span>
+          </span>
+        </div>
+          
       </div>
   </div>
 </template>
@@ -28,8 +17,25 @@ export default {
   name: 'sss',
   data () {
     return {
-        menuList: []
+        menuList: [{
+          icon: 'icon1',
+          name: '美食'
+        },{
+          icon: 'icon4',
+          name: '饮品'
+        },{
+          icon: 'icon3',
+          name: '水果'
+        },{
+          icon: 'icon2',
+          name: '旅游'
+        },]
     };
+  },
+  methods: {
+    menuJump(name) {
+      console.log(name)
+    }
   }
 }
 
@@ -42,13 +48,12 @@ export default {
       background-color: #fff;
       border-top: 1px solid #ccc;
       margin-bottom: 20px;
-    ul{
+    .ul{
       display: flex;
-      li{
+      .li{
         display: inline-block;
         flex: 1;
         text-align: center;
-        cursor: pointer;
         .icon1{
           display: inline-block;
           height: 60px;
