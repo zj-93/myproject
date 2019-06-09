@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-      <div class="viewList" v-for="(item, index) in list" :key="index">
+      <div class="viewList" v-for="(item, index) in list" :key="index" @click="jumpDetail(item.id)">
         <span class="imgArea">
           <img :src="item.img" alt="">
         </span>
@@ -57,7 +57,9 @@ export default {
     },300)
   },
   methods: {
-
+    jumpDetail(id) {
+      this.$router.push({name: 'detail', params: {id: id}})
+    }
   }
 }
 
